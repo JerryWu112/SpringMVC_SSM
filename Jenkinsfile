@@ -20,10 +20,12 @@ pipeline {
     }
     post {
         always {
-            emailext body: '${DEFAULT_CONTENT}',
+            emailext (
+                body: '${DEFAULT_CONTENT}',
                 subject: '${DEFAULT_SUBJECT}',
                 to: '${DEFAULT_RECIPIENTS}',
                 from: '${env.DEFAULT_FROM_EMAIL}'
+            )
         }
     }
 }
