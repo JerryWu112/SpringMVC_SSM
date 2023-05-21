@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('pull code') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'ce0af2ad-a40b-4715-8e34-604637b8c998', url: 'git@github.com:JerryWu112/SpringMVC_SSM.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/${branch}']], extensions: [], userRemoteConfigs: [[credentialsId: 'ce0af2ad-a40b-4715-8e34-604637b8c998', url: 'git@github.com:JerryWu112/SpringMVC_SSM.git']]])
             }
         }
         stage('build') {
